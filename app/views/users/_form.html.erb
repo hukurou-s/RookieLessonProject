@@ -1,0 +1,26 @@
+
+<%= form_for @user do |f| %>
+
+<%= f.label :grade, '学年' %>
+<%= f.text_field :grade %>
+<br />
+
+<%= f.label :grade, '学籍番号' %>
+<%= f.text_field :snum %>
+<br />
+
+<%= f.label :grade, '氏名' %>
+<%= f.text_field :name %>
+<br />
+
+<%= f.label :grade, 'アカウント名' %>
+<%= f.text_field :account %>
+<br />
+
+<%= f.label :grade, 'パスワード' %>
+<%= f.password_field :password %>
+<br />
+
+<%= f.submit submit_text %>
+
+<% end %>
