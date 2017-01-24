@@ -1,5 +1,12 @@
+# coding: utf-8
 class UsersController < ApplicationController
+
+  before_action :login_check
+
   def index
+    #if session[:user_id] == nil
+      #return redirect_to new_login_path, alert: 'ログインしてください。'
+    #end
     @users = User.all
   end
 
@@ -13,7 +20,7 @@ class UsersController < ApplicationController
       name: user['name'],
       snum: user['snum'],
       grade: user['grade'],
-      password: user['password'],
+      password: Digest::SHA256.hexdigest(user['password']),
       account: user['account']
     )
     redirect_to users_path
@@ -30,7 +37,7 @@ class UsersController < ApplicationController
       name: user_params['name'],
       snum: user_params['snum'],
       grade: user_params['grade'],
-      password: user_params['password'],
+      password: Digest::SHA256.hexdigest(user_params['password']),
       account: user_params['account']
     )
     redirect_to users_path
@@ -41,4 +48,10 @@ class UsersController < ApplicationController
     user.destroy
     redirect_to users_path
   end
+
+  #def login_check
+  #  if session[:user_id] == nil
+  #    return redirect_to new_login_path, alert: 'ログインしてください。'
+  #  end
+  #end
 end

@@ -1,0 +1,19 @@
+<h1>ログイン</h1>
+
+<% if flash[:alert] %>
+<div style="background-color: #FF5555;">
+  <%=flash[:alert]  %>
+</div>
+<% end %>
+
+<%= form_tag logins_path do %>
+  <div>
+  <%= label_tag :account, 'アカウント名' %>
+  <%= text_field_tag :account, params[:account] %>
+  </div>
+  <div>
+    <%= label_tag :password, 'パスワード' %>
+    <%= password_field_tag :password, params[:password] %>
+  </div>
+  <%= submit_tag 'ログイン' %>
+<% end %>
