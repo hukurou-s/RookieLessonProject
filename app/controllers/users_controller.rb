@@ -2,6 +2,7 @@
 class UsersController < ApplicationController
 
   before_action :login_check
+  before_action :authenticate_admin!, only: [:new, :create, :edit, :update]
 
   def index
     #if session[:user_id] == nil
@@ -21,6 +22,7 @@ class UsersController < ApplicationController
       snum: user['snum'],
       grade: user['grade'],
       password: Digest::SHA256.hexdigest(user['password']),
+      password_confirmation: Digest::SHA256.hexdigest(user['password_confirmation']),
       account: user['account']
     )
     redirect_to users_path
@@ -38,6 +40,7 @@ class UsersController < ApplicationController
       snum: user_params['snum'],
       grade: user_params['grade'],
       password: Digest::SHA256.hexdigest(user_params['password']),
+      password_confirmation: Digest::SHA256.hexdigest(user['password_confirmation']),
       account: user_params['account']
     )
     redirect_to users_path
