@@ -1,0 +1,21 @@
+
+
+
+
+<table border = "1">
+  <thead>
+    <th>論文タイトル</th>
+    <th>筆頭著者</th>
+    <th>共著者</th>
+  </thead>
+  <tbody>
+    <% @papers.each do |paper| %>
+    <tr>
+      <td><%= link_to "#{paper.title_J}", paper_path(paper) %></td>
+      <td><%= paper.Lead_author %></td>
+      <td><%= paper.Co_author %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
