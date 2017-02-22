@@ -1,3 +1,4 @@
+# coding: utf-8
 class PapersController < ApplicationController
   before_action :login_check
   def index
@@ -15,13 +16,13 @@ class PapersController < ApplicationController
   def create
     paper = params['paper']
     Paper.create(
-      title_J: paper['title_J'],
-      title_E: paper['title_E'],
-      Lead_author: paper['Lead_author'],
-      Co_author: paper['Co_author'],
+      title_ja: paper['title_ja'],
+      title_en: paper['title_en'],
+      lead_author: paper['lead_author'],
+      co_author: paper['co_author'],
       abstract: paper['abstract']
     )
-    redirect_to papers_path
+    redirect_to papers_path, alert: '登録完了しました。'
   end
 
   def edit

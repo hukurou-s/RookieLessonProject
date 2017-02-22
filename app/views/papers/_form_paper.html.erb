@@ -1,20 +1,20 @@
 
 <%= form_for @paper do |p| %>
 
-<%= p.label :title_J, '日本語タイトル' %>
-<%= p.text_field :title_J, :size=>"100" %>
+<%= p.label :title_ja, '日本語タイトル' %>
+<%= p.text_field :title_ja, :size=>"100" %>
 <br />
 
-<%= p.label :title_E, '英語タイトル' %>
-<%= p.text_field :title_E, :size=>"100" %>
+<%= p.label :title_en, '英語タイトル' %>
+<%= p.text_field :title_en, :size=>"100" %>
 <br />
 
-<%= p.label :Lead_author, '筆頭著者' %>
-<%= p.text_field :Lead_author, :size=>"40" %>
+<%= p.label :lead_author, '筆頭著者' %>
+<%= p.text_field :lead_author, :size=>"40" %>
 <br />
 
-<%= p.label :Co_author, '共著者(コンマ区切り)' %>
-<%= p.text_field :Co_author, :size=>"60"%>
+<%= p.label :co_author, '共著者(コンマ区切り)' %>
+<%= p.text_field :co_author, :size=>"60"%>
 <br />
 
 <%= p.label :abstract, 'abstract' %>

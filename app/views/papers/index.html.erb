@@ -1,7 +1,7 @@
 
 
 
-
+<%= flash[:alert] %>
 <table border = "1">
   <thead>
     <th>論文タイトル</th>
@@ -11,9 +11,9 @@
   <tbody>
     <% @papers.each do |paper| %>
     <tr>
-      <td><%= link_to "#{paper.title_J}", paper_path(paper) %></td>
-      <td><%= paper.Lead_author %></td>
-      <td><%= paper.Co_author %></td>
+      <td><%= link_to "#{paper.title_ja}", paper_path(paper) %></td>
+      <td><%= paper.lead_author %></td>
+      <td><%= paper.co_author %></td>
     </tr>
     <% end %>
   </tbody>

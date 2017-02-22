@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 20170220144704) do
   enable_extension "plpgsql"
 
   create_table "papers", force: :cascade do |t|
-    t.string   "title_J",     default: ""
-    t.string   "title_E",     default: ""
-    t.string   "Lead_author"
-    t.string   "Co_author"
+    t.string   "title_ja",    default: ""
+    t.string   "title_en",    default: ""
+    t.string   "lead_author"
+    t.string   "co_author"
     t.text     "abstract",    default: ""
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
