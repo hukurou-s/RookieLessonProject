@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20170220144704) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.boolean  "is_admin",   default: false
+    t.index ["account"], name: "index_users_on_account", unique: true, using: :btree
+    t.index ["snum"], name: "index_users_on_snum", unique: true, using: :btree
   end
 
 end
