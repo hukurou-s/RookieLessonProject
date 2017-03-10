@@ -14,6 +14,7 @@
       <td><%= link_to "#{paper.title_ja}", paper_path(paper) %></td>
       <td><%= paper.lead_author %></td>
       <td><%= paper.co_author %></td>
+      <td><%= link_to '編集', edit_paper_path(paper) %></td>
     </tr>
     <% end %>
   </tbody>

@@ -27,10 +27,21 @@ class PapersController < ApplicationController
 
   def edit
 
+    @paper = Paper.find(params[:id])
+
   end
 
   def update
-
+    paper = Paper.find(params[:id])
+    paper_params = params['paper']
+    paper.update(
+      title_ja: paper_params['title_ja'],
+      title_en: paper_params['title_en'],
+      lead_author: paper_params['lead_author'],
+      co_author: paper_params['co_author'],
+      abstract: paper_params['abstract']
+    )
+    redirect_to papers_path, alert: '編集完了しました。'
   end
 
   def destroy
